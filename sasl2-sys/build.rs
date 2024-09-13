@@ -124,7 +124,9 @@ fn build_sasl(metadata: &Metadata) {
         configure_args.push(format!("--build={}", metadata.host));
         configure_args.push(format!("--host={}", metadata.target));
     }
-    let mut cmd = cmd(src_dir.join("configure"), &configure_args).dir(&src_dir);
+    let mut cmd = cmd(src_dir.join("configure"), &configure_args)
+        .dir(&src_dir)
+        .env_remove("CONFIG_SITE");
     if metadata.host != metadata.target {
         cmd = cmd.env("ac_cv_gssapi_supports_spnego", "yes");
     }

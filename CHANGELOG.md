@@ -9,6 +9,18 @@ Versioning].
 
 ## [Unreleased] <!-- #release:date -->
 
+## [0.1.22] - 2024-05-13
+
+* Ignore the `CONFIG_SITE` environment variable when running configuration.
+  Site-specific configuration is generally not relevant when building with
+  Cargo and can lead to installations that are not laid out in the way
+  this crate's build script expects. See [#49] for details.
+
+## [0.1.21] - 2024-05-13
+
+* Incorporate unreleased patch from upstream to fix the handling of time.h
+  header inclusions. This fixes compliation with GCC 14+.
+
 ## [0.1.20] - 2022-05-26
 
 * Upgrade to libsasl2 v2.1.28.
@@ -158,7 +170,9 @@ Versioning].
 Initial release.
 
 <!-- #release:next-url -->
-[Unreleased]: https://github.com/MaterializeInc/rust-sasl/compare/v0.1.20...HEAD
+[Unreleased]: https://github.com/MaterializeInc/rust-sasl/compare/v0.1.22...HEAD
+[0.1.22]: https://github.com/MaterializeInc/rust-sasl/compare/v0.1.21...v0.1.22
+[0.1.21]: https://github.com/MaterializeInc/rust-sasl/compare/v0.1.20...v0.1.21
 [0.1.20]: https://github.com/MaterializeInc/rust-sasl/compare/v0.1.19+2.1.27...v0.1.20
 [0.1.19+2.1.27]: https://github.com/MaterializeInc/rust-sasl/compare/v0.1.18...v0.1.19+2.1.27
 [0.1.18]: https://github.com/MaterializeInc/rust-sasl/compare/v0.1.17...v0.1.18
@@ -191,6 +205,7 @@ Initial release.
 [#34]: https://github.com/MaterializeInc/rust-sasl/issues/34
 [#36]: https://github.com/MaterializeInc/rust-sasl/issues/36
 [#40]: https://github.com/MaterializeInc/rust-sasl/issues/40
+[#49]: https://github.com/MaterializeInc/rust-sasl/pull/49
 
 [@pbor]: https://github.com/pbor
 [@sandhose]: https://github.com/sandhose
